@@ -1,20 +1,43 @@
-print("Bienvenido a ...")
-print("""              _                  __
-   ____ ___  (_)  ________  ____/ /
-  / __ `__ \/ /  / ___/ _ \/ __  /
- / / / / / / /  / /  /  __/ /_/ /
-/_/ /_/ /_/_/  /_/   \___/\__,_/
+# Importamos las funciones desde el módulo Funciones_Portal
+from Funciones_Portal import *
 
-""")
+#Damos la bienvenida a la red
 
-print("Bienvenido al portal, a continuación te haremos algunas preguntas para comenzar la creación de tu perfil")
+mensaje_bienvenida()
 
-nombre = input("¿Cuál es tu nombre? ")
-residencia = input("¿Cuál es tu ciudad de residencia actual? ")
-correo = input("¿Cuál es tu correo electrónico? ")
+#Obtenemos los datos iniciales del usuario: nombre, género, país de nacimiento, residencia actual y correo electrónico
 
-print('Bienvenido', nombre, ', crearemos tu nuevo perfil utilizando los siguientes datos:')
-print("Residencia: ", residencia)
-print("Correo Electrónico: ", correo)
+(nombre, genero, pais_nac, residencia, correo) = obtener_datos()
+print('Bienvenido, crearemos tu nuevo perfil utilizando los siguientes datos:')
+ver_perfil(nombre, genero, pais_nac, residencia, correo)
+
+# Entramos al menú inicial, donde el usuario puede seleccionar una opción.
+
+print("Bienvenido al menú del Portal")
+opcion = 1
+while opcion:
+    opcion = int(ver_menu())
+    if opcion == 1:
+        ver_perfil(nombre, genero, pais_nac, residencia, correo)
+
+    elif opcion == 2:
+        print("")
+        (nombre, genero, pais_nac, residencia, correo) = obtener_datos()
+        print('Actualizaremos tu perfil utilizando los siguientes datos:')
+        ver_perfil(nombre, genero, pais_nac, residencia, correo)
+
+    elif opcion == 3:
+        escribir_mensaje(nombre)
+
+    elif opcion == 0:
+        print("!Hasta pronto¡")
+        continuar = False
+
+    else:
+        print("Opcion incorrecta, seleccione otra opción")
+
+
+
+
 
 

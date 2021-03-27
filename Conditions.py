@@ -6,6 +6,8 @@ if llueve == True:
 else:
     print("No llevaré paraguas")
 
+#Es posible evaluar numerosas condiciones mediante el uso de elif.
+
 llueve = True
 temperatura = 12
 if llueve == True and temperatura < 20:
@@ -14,3 +16,6 @@ elif llueve == True and temperatura >= 20:
     print("Solo llevaré paraguas")
 else:
     print("No llevaré paraguas")
+
+
+
